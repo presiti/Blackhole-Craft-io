@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 
 public class Move : MonoBehaviour
 {
-    private float moveSpeed = 5.0f;         // 이동 속도
+    private float moveSpeed = 15.0f;         // 이동 속도
     private Vector3 moveDirection = Vector3.zero;   // 이동 방향
 
     // Start is called before the first frame update
