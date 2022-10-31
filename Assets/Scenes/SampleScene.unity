@@ -16609,6 +16609,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ExpCell: {fileID: 2258967910538563138, guid: 0b783484ac168eb408cdfff421f28cf7, type: 3}
+  count: 0
 --- !u!4 &596248050
 Transform:
   m_ObjectHideFlags: 0
@@ -117212,7 +117213,7 @@ GameObject:
   - component: {fileID: 1534617462}
   - component: {fileID: 1534617461}
   - component: {fileID: 1534617467}
-  - component: {fileID: 1534617463}
+  - component: {fileID: 1534617468}
   - component: {fileID: 1534617465}
   - component: {fileID: 1534617466}
   m_Layer: 0
@@ -117290,18 +117291,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1534617463
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1534617460}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78b0e9c42f6a25c4fa31f8cc55eb248f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!50 &1534617465
 Rigidbody2D:
   serializedVersion: 4
@@ -117353,6 +117342,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreText: {fileID: 1817799967}
   cellManager: {fileID: 596248049}
+--- !u!114 &1534617468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1534617460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78b0e9c42f6a25c4fa31f8cc55eb248f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1537220898
 GameObject:
   m_ObjectHideFlags: 0

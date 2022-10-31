@@ -8,22 +8,24 @@ public class Move : MonoBehaviour
     private float moveSpeed = 15.0f;         // 이동 속도
     private Vector3 moveDirection = Vector3.zero;   // 이동 방향
 
+    Rigidbody2D rb2;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        rb2 = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        float x = Input.GetAxisRaw("Horizontal");   //좌우 이동
-        float y = Input.GetAxisRaw("Vertical");     //위, 아래 이동
+        float horizontal = Input.GetAxis("Horizontal");
+        float vertical = Input.GetAxis("Vertical");
 
-        // 이동방향 설정
-        moveDirection = new Vector3(x, y, 0);
+        Vector2 position = rb2.position;
+        position.x = position.x + moveSpeed * horizontal * Time.deltaTime;
+        position.y = position.y + moveSpeed * vertical * Time.deltaTime;
 
-        // 새로운 위치 =  현재 위치 + (방향 * 속도)
-        transform.position += moveDirection * moveSpeed * Time.deltaTime;
+        rb2.MovePosition(position);
     }
 }

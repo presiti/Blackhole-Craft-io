@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 public class ExpSpawnManager : MonoBehaviour
@@ -9,12 +10,16 @@ public class ExpSpawnManager : MonoBehaviour
     private int cnt = CellManager.initCount; //생성할 세포(게임 오브젝트)의 개수
     private BoxCollider2D area;     //BoxCollider2D의 사이즈를 가져오기 위한 변수
     private List<GameObject> ExpList = new List<GameObject>();		//생성한 세포 오브젝트 리스트
-    
+
 
     void Start()
     {
-        area = GetComponent<BoxCollider2D>();
-        StartCoroutine("Spawn", 10);
+        if (<= 5000) 
+        {
+            area = GetComponent<BoxCollider2D>();
+            StartCoroutine("Spawn", 3);
+        }
+        
     }
 
     //게임 오브젝트를 복제하여 scene에 추가
