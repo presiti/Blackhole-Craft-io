@@ -14,12 +14,8 @@ public class ExpSpawnManager : MonoBehaviour
 
     void Start()
     {
-        if (<= 5000) 
-        {
-            area = GetComponent<BoxCollider2D>();
-            StartCoroutine("Spawn", 3);
-        }
-        
+        area = GetComponent<BoxCollider2D>();
+        StartCoroutine("Spawn", 3);
     }
 
     //게임 오브젝트를 복제하여 scene에 추가
@@ -33,6 +29,10 @@ public class ExpSpawnManager : MonoBehaviour
 
                 //원본, 위치, 회전값을 매개변수로 받아 오브젝트 복제
                 GameObject instance = cellManager.Create(spawnPos);
+                if (instance == null)
+                {
+                    break;
+                }
 
                 ExpList.Add(instance); //오브젝트 관리를 위해 리스트에 add
             }

@@ -16609,7 +16609,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ExpCell: {fileID: 2258967910538563138, guid: 0b783484ac168eb408cdfff421f28cf7, type: 3}
-  count: 0
+  limitCount: 5000
 --- !u!4 &596248050
 Transform:
   m_ObjectHideFlags: 0
@@ -117284,7 +117284,7 @@ Transform:
   m_GameObject: {fileID: 1534617460}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.1603, y: 0.1603, z: 0.1603}
+  m_LocalScale: {x: 0.15, y: 0.15, z: 0.1603}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 519420032}
@@ -117342,6 +117342,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreText: {fileID: 1817799967}
   cellManager: {fileID: 596248049}
+  score: 0
 --- !u!114 &1534617468
 MonoBehaviour:
   m_ObjectHideFlags: 0

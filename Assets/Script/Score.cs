@@ -1,14 +1,14 @@
 using TMPro;
 using UnityEngine;
 
-public class Scroe : MonoBehaviour
+public class Score : MonoBehaviour
 {
     [SerializeField]
     private TextMeshProUGUI scoreText;
     [SerializeField]
     private CellManager cellManager;
 
-    private float score = 0.0f;
+    public float score = 0.0f;
 
     // Update is called once per frame
     private void OnTriggerEnter2D(Collider2D collision)

@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Move : MonoBehaviour
+public class player_Move : MonoBehaviour
 {
-    private float moveSpeed = 15.0f;         // 이동 속도
-    private Vector3 moveDirection = Vector3.zero;   // 이동 방향
+    private static float moveSpeed = 20.0f;         // 이동 속도    
 
     Rigidbody2D rb2;
+    Score sc = new Score();
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +21,11 @@ public class Move : MonoBehaviour
     {
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
+
+        if(sc.score % 5f == 0f && moveSpeed > 10)
+        {
+            moveSpeed -= 5f;
+        }
 
         Vector2 position = rb2.position;
         position.x = position.x + moveSpeed * horizontal * Time.deltaTime;
