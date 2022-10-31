@@ -16790,8 +16790,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1094545935}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 11.807, y: -0.342, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.0141, y: 0, z: 0}
+  m_LocalScale: {x: 1.000089, y: 0.9998774, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1295174419}
@@ -117167,7 +117167,7 @@ GameObject:
   - component: {fileID: 1295174419}
   - component: {fileID: 1295174418}
   m_Layer: 0
-  m_Name: Grid
+  m_Name: Field
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -117352,7 +117352,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 1817799967}
-  cellManager: {fileID: 0}
+  cellManager: {fileID: 596248049}
 --- !u!1 &1537220898
 GameObject:
   m_ObjectHideFlags: 0
@@ -117449,7 +117449,7 @@ GameObject:
   - component: {fileID: 1629426549}
   - component: {fileID: 1629426551}
   m_Layer: 0
-  m_Name: Grid
+  m_Name: OutLine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -117476,7 +117476,7 @@ Transform:
   m_GameObject: {fileID: 1629426548}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 336620726}

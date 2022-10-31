@@ -2,8 +2,7 @@ using UnityEngine;
 
 public class CellManager : MonoBehaviour
 {
-
-    public static int initCount;
+    public static int initCount = 1000;
 
     public GameObject ExpCell;
     private int count;

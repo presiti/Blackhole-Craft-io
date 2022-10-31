@@ -24,7 +24,7 @@ public class Scroe : MonoBehaviour
             scoreText.text = ((int)score).ToString();
         }
 
-        if (gameObject.CompareTag("whitehole")){
+        if (gameObject.CompareTag("whitehole")) {
 
             Destroy(gameObject);    // ´êÀº È­ÀÌÆ®È¦ ¾ø¾Ö±â
 

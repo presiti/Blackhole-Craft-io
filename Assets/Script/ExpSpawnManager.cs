@@ -9,41 +9,33 @@ public class ExpSpawnManager : MonoBehaviour
     private int cnt = CellManager.initCount; //생성할 세포(게임 오브젝트)의 개수
     private BoxCollider2D area;     //BoxCollider2D의 사이즈를 가져오기 위한 변수
     private List<GameObject> ExpList = new List<GameObject>();		//생성한 세포 오브젝트 리스트
-
-
-    Color color;
-    SpriteRenderer cell;
-    private string[] colorList = new string[] { "ffafb0", "ffafd8", "eeb7b4", "f2cfa5", "fcffb0", "aee4ff", "b5c7ed", "c4f4fe", 
-        "bee9b4", "fdfa87", "fcc6f7", "caa6fe", "ffafd8", "afffba", "e2ffaf", "fcffb0", "f2cfa5", "ffe4af", "dfd4e4", "a9e1ed",
-        "99ffcc", "99ffff"};
+    
 
     void Start()
     {
         area = GetComponent<BoxCollider2D>();
-        StartCoroutine("Spawn", 1);
+        StartCoroutine("Spawn", 10);
     }
 
     //게임 오브젝트를 복제하여 scene에 추가
     private IEnumerator Spawn(float delayTime)
     {
-        for (int i = 0; i < cnt; i++) //count만큼 책 생성
+        while (true)
         {
-            Vector3 spawnPos = GetRandomPosition(); //랜덤 위치 return
+            for (int i = 0; i < cnt; i++) //count만큼 책 생성
+            {
+                Vector3 spawnPos = GetRandomPosition(); //랜덤 위치 return
 
-            //원본, 위치, 회전값을 매개변수로 받아 오브젝트 복제
-            GameObject instance = cellManager.Create(spawnPos);
+                //원본, 위치, 회전값을 매개변수로 받아 오브젝트 복제
+                GameObject instance = cellManager.Create(spawnPos);
 
-            ColorUtility.TryParseHtmlString(colorList[Random.Range(1, 3)], out color);
-            cell.color = color;
+                ExpList.Add(instance); //오브젝트 관리를 위해 리스트에 add
+            }
 
-            ExpList.Add(instance); //오브젝트 관리를 위해 리스트에 add
-        }
-        area.enabled = false;
-        yield return new WaitForSeconds(delayTime);   //주기 : 3초
+            area.enabled = false;
+            cnt = CellManager.initCount / 10;
 
-        if (cellManager.Count < cnt) //세포의 수가 줄어들었을 때
-        {
-            StartCoroutine("Spawn", 1); //세포 다시 스폰
+            yield return new WaitForSeconds(delayTime);   //주기 : 3초
         }
 
     }
