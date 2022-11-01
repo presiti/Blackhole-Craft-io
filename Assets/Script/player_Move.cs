@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 
 public class player_Move : MonoBehaviour
 {
-    private float moveSpeed = 5f;         // 이동 속도    
+    private float moveSpeed = 20f;         // 이동 속도    
 
     Rigidbody2D rb2;
     Score sc = new Score();
@@ -16,7 +16,15 @@ public class player_Move : MonoBehaviour
         rb2 = GetComponent<Rigidbody2D>();
     }
 
-    
+    private void Update()
+    {
+        if (sc.score % 5f == 0f && moveSpeed > 10)
+            moveSpeed -= 5f;
+        else if (sc.score % 10f == 0f && moveSpeed > 2)
+            moveSpeed -= 2f;
+    }
+
+
 
     // Update is called once per frame
     void FixedUpdate()
@@ -27,10 +35,6 @@ public class player_Move : MonoBehaviour
 
         //        Vector3 dir = new Vector3(horizontal, vertical, 0);
         //        rb2.velocity = dir.normalized * moveSpeed;
-
-
-        //if (sc.score % 5f == 0f && moveSpeed > 10)
-        //    moveSpeed -= 5f;
 
 
         Vector2 move = new Vector2(horizontal, vertical);

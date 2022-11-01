@@ -15,8 +15,6 @@ public class GameStartManager : MonoBehaviour
 
     bool startGame = false;
 
-    StartButton startBtn = new StartButton();
-
 
     void Awake()
     {
@@ -36,7 +34,7 @@ public class GameStartManager : MonoBehaviour
     {
         if (startGame == false)
         {
-            if (startBtn.OnClickStart())
+            if (Input.GetKeyDown(KeyCode.Return))
             {
                 startGame = true;
                 Time.timeScale = 1f;
