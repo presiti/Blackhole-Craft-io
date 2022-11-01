@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 
 public class player_Move : MonoBehaviour
 {
-    private static float moveSpeed = 20.0f;         // 이동 속도    
+    private float moveSpeed = 5f;         // 이동 속도    
 
     Rigidbody2D rb2;
     Score sc = new Score();
@@ -16,21 +16,28 @@ public class player_Move : MonoBehaviour
         rb2 = GetComponent<Rigidbody2D>();
     }
 
+    
+
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        float horizontal = Input.GetAxis("Horizontal");
-        float vertical = Input.GetAxis("Vertical");
+        float horizontal = Input.GetAxis("Horizontal"); // A, D 또는 ←, →방향키를 입력받음
+        float vertical = Input.GetAxis("Vertical");     // W, S 또는 ↑, ↓ 방향키를 입력받음
 
-        if(sc.score % 5f == 0f && moveSpeed > 10)
-        {
-            moveSpeed -= 5f;
-        }
 
-        Vector2 position = rb2.position;
-        position.x = position.x + moveSpeed * horizontal * Time.deltaTime;
-        position.y = position.y + moveSpeed * vertical * Time.deltaTime;
+        //        Vector3 dir = new Vector3(horizontal, vertical, 0);
+        //        rb2.velocity = dir.normalized * moveSpeed;
 
-        rb2.MovePosition(position);
+
+        //if (sc.score % 5f == 0f && moveSpeed > 10)
+        //    moveSpeed -= 5f;
+
+
+        Vector2 move = new Vector2(horizontal, vertical);
+        Vector2 Position = rb2.position;
+
+        Position = Position + (move * moveSpeed * Time.deltaTime);
+        rb2.MovePosition(Position);
+
     }
 }
